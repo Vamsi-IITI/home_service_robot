@@ -7,17 +7,10 @@ roslaunch turtlebot3_gazebo turtlebot3_world.launch " &
 
 sleep 5
 
-# launch gmapping_demo.launch to perform slam_gmapping
+# launch turtlebot3_slam.launch to perform slam_gmapping
 xterm -e "cd $(pwd)/../..;
 source devel/setup.bash;
-roslaunch turtlebot3_slam turtlebot3_gmapping.launch " &
-
-sleep 5
-
-# launch view_navigation for rviz
-xterm -e "cd $(pwd)/../..;
-source devel/setup.bash;
-roslaunch turtlebot3_navigation turtlebot3_navigation.launch" &
+roslaunch turtlebot3_slam turtlebot3_slam.launch " &
 
 sleep 5
 

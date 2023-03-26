@@ -1,10 +1,20 @@
 #!/bin/sh
-xterm  -e  " source /opt/ros/noetic/setup.bash; roscore" & 
+
+# launch turtlebot_world.launch to deploy turtlebot environment
+gnome-terminal -e 'bash -c "source ~/home_service_robot/devel/setup.bash"';
+gnome-terminal -e 'bash -c "roslaunch turtlebot3_gazebo turtlebot3_world.launch "' & 
+
 sleep 5
-xterm  -e  " roslaunch turtlebot3_gazebo turtlebot3_world.launch " &
+
+# launch turtlebot3_slam.launch to perform slam_gmapping
+gnome-terminal -e 'bash -c "source ~/home_service_robot/devel/setup.bash"';
+gnome-terminal -e 'bash -c "roslaunch turtlebot3_slam turtlebot3_slam.launch "' &
+
 sleep 5
-xterm  -e  " roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch " &
-sleep 5
-xterm  -e  " roslaunch turtlebot3_slam turtlebot3_gmapping.launch " &
-sleep 5
-xterm  -e  " roslaunch turtlebot3_navigation turtlebot3_navigation.launch "
+
+# launch teleop_keyboard for manual control
+gnome-terminal -e 'bash -c "source ~/home_service_robot/devel/setup.bash"';
+gnome-terminal -e 'bash -c "roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch"' 
+
+# save using following on command line
+# rosrun map_server map_saver -f <map-location-and-name>
