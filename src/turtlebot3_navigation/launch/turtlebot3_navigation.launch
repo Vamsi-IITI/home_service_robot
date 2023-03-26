@@ -2,7 +2,7 @@
   <!-- Arguments -->
   <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/>
-  <arg name="open_rviz" default="true"/>
+  <!-- <arg name="open_rviz" default="true"/> -->
   <arg name="move_forward_only" default="false"/>
 
   <!-- Turtlebot3 -->
@@ -23,8 +23,10 @@
   </include>
 
   <!-- rviz -->
-  <group if="$(arg open_rviz)"> 
+  <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
+  <!-- <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
-  </group>
+  </group> -->
 </launch>
