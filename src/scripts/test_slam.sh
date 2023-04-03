@@ -2,7 +2,7 @@
 
 # launch turtlebot_world.launch to deploy turtlebot environment
 gnome-terminal -e 'bash -c "source ~/home_service_robot/devel/setup.bash"';
-gnome-terminal -e 'bash -c "roslaunch turtlebot3_gazebo turtlebot3_world.launch "' & 
+gnome-terminal -e 'bash -c "roslaunch autonomous_turtlebot3 turtlebot3_world.launch "' & 
 
 sleep 5
 
