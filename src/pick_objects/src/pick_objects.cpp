@@ -52,6 +52,7 @@ int main(int argc, char** argv){
   // Define a position and orientation for the robot to reach
   // drop off zone
   goal1.target_pose.pose.position.x = 4.5;
+  goal1.target_pose.pose.position.y = 4.5;
   goal1.target_pose.pose.orientation.w = 1.0;
 
   // Send the goal position and orientation for the robot to reach
