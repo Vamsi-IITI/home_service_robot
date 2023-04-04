@@ -65,28 +65,21 @@ int main( int argc, char** argv )
 
         // Publish the marker at pickup zone and wait for 5 secs .
         marker_pub.publish(marker);
+        ROS_INFO("Marker published at pickup zone");
         sleep(5);
 
-        // Delete the marker for 5 secs
-        marker.action = visualization_msgs::Marker::DELETE;
+        // Hide the marker for 5 secs
+        marker.color.r = 0.0f;
+        marker.color.a = 0.0;
+        marker_pub.publish(marker);
+        ROS_INFO("Marker hidden");
         sleep(5);
 
         // Add marker again
-        marker.action = visualization_msgs::Marker::ADD;
-
         // Set the pose of the marker to location of drop off zone
         marker.pose.position.x = 4.5;
         marker.pose.position.y = 4.5;
         marker.pose.position.z = 0;
-
-        marker.pose.orientation.x = 0.0;
-        marker.pose.orientation.y = 0.0;
-        marker.pose.orientation.z = 0.0;
-        marker.pose.orientation.w = 1.0;
-
-        marker.scale.x = 0.2;
-        marker.scale.y = 0.2;
-        marker.scale.z = 0.2;
 
         marker.color.r = 1.0f;
         marker.color.g = 0.0f;
@@ -98,6 +91,7 @@ int main( int argc, char** argv )
         // Publish the marker at pickup zone 
         while (ros::ok()){
             marker_pub.publish(marker);
+            ROS_INFO_ONCE("Marker published at drop off zone");
         }
 
         r.sleep();
