@@ -6,6 +6,6 @@ gnome-terminal -- bash -c "roslaunch autonomous_turtlebot3 turtlebot3_world.laun
 
 sleep 5
 
-# launch turtlebot3_slam.launch to perform slam_gmapping
+# launch turtlebot3_navigation.launch to perform localization and navigation
 gnome-terminal -- bash -c "source ~/home_service_robot/devel/setup.bash";
 gnome-terminal -- bash -c "roslaunch turtlebot3_navigation turtlebot3_navigation.launch "
