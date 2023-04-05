@@ -114,7 +114,7 @@ int main(int argc, char **argv){
             marker_pub.publish(marker); 
         }
 
-        if (K == 1 && abs(X+1)>tol && abs(Y)>tol )
+        if (K == 1 && abs(X+1)>0.4 && abs(Y)>0.4 )
         {
         ROS_INFO_ONCE("Robot headed to dropoff zone");
         marker.color.r = 0.0f;
