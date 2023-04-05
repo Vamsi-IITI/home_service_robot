@@ -11,7 +11,7 @@ float X,Y,Z;
 // global variable for tracking the velocity and angular velocity of the robot
 float velX, velY, velZ , angVelZ;
 // tolerance to account for uncertainities in the robot's position and velocity
-float tol = 0.6;
+float tol = 0.8;
 float velTol = 0.001;
 
 void odomCallback(const nav_msgs::Odometry::ConstPtr& msg){
