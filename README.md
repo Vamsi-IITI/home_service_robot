@@ -15,9 +15,16 @@ catkin_make
 ```
 source devel/setup.bash
 ```
+
+For gnome terminal :
 ```
 ./src/scripts/home_service.sh
 ```
+For xterm terminal :
+```
+./src/xterm_scripts/home_service.sh
+```
+
 ### Note :
 If robot fails to perform its tasks , increasing tolerance value in virtual_object.cpp file in home_service_package will help.
 
