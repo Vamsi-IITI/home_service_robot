@@ -1,0 +1,10 @@
+<launch>
+
+ <!-- The virtual_object node ie the modified add markers node -->
+  <node name="virtual_object" type="virtual_object" pkg="home_service" output="screen">
+  </node>
+ <!-- The pick_objects node -->
+  <node name="pick_objects" type="pick_objects" pkg="pick_objects" output="screen">
+  </node>
+
+</launch>

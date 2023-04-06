@@ -12,12 +12,6 @@ gnome-terminal -- bash -c "roslaunch turtlebot3_navigation turtlebot3_navigation
 
 sleep 5
 
-# launch virtual_object node that adds markers to rviz
+# launch virtual_object node that adds markers to rviz and pick_objects node using home_service.launch
 gnome-terminal -- bash -c "source ~/home_service_robot/devel/setup.bash";
-gnome-terminal -- bash -c "rosrun home_service virtual_object" &
-
-sleep 5
-
-# launch pick objects node
-gnome-terminal -- bash -c "source ~/home_service_robot/devel/setup.bash";
-gnome-terminal -- bash -c "rosrun pick_objects pick_objects"
+gnome-terminal -- bash -c "roslaunch home_service home_service.launch" 
